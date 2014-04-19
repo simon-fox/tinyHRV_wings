@@ -19,6 +19,17 @@
 	//- test building edge shapes
 	- build in ig.game.bpm and ig.game.timeElapsed 
 	- build an edgeShape every x seconds in update
+		- too much performance hit if we do a 1px line every update
+		- either do a longer line more slowly (naive)
+		- or find a way to feed the right world co-ords into edgeShape 
+		  at time of construction
+		- 2 vertices in array
+		- max delay would be perhaps 0.5 seconds 
+		- first vertex is finishing vertex of previous edgeShape
+		- second vertex is new co-ords expressed relative to local co-ords
+			- so y co-ord = ( ig.game.bpm - this.pos.y )
+
+
 	- take dummy bpm values and test level building  
 - Player character
 	- movement connected to coherence score
