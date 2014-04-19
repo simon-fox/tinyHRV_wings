@@ -35,6 +35,10 @@
 		- still not great on performance... needs testing. 	
 	//- take dummy bpm values and test level building  
 
+	- sort out proper infinite scrolling
+		- destroy past level points
+		- build future level ahead of player
+
 - Player character
 	- movement connected to coherence score
 	- tap to bounce
