@@ -15,8 +15,10 @@
 	- feed in during update
 	- loop array 
 - Dynamic level building
-	- research edge shapes
-	- test building edge shapes
+	//- research edge shapes
+	//- test building edge shapes
+	- build in ig.game.bpm and ig.game.timeElapsed 
+	- build an edgeShape every x seconds in update
 	- take dummy bpm values and test level building  
 - Player character
 	- movement connected to coherence score
