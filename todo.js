@@ -1,35 +1,58 @@
 ------------------------------
 //////////////////////////////////
-//  FLOWY BALLOON LIFTER todo   //
+//  HRV TINY WINGS TODO         //
 //////////////////////////////////
 
-//- Gut out ballon bobble mechanics
-//- remove ceiling on level 
-//- balloon, chain and item carried on chain for every breath
-	//- change balloon so it anchors to an item
-	//- item is just small obstacle for now 
-		//- will need to retrofit obstacle class
-//- do we still use anchor and chain?
-//- or do ballons stay in place in center until released?
-	//- using anchor and chain means we can prototype it faster
-
-//- fix clean up after breath so it only destroys correct chain. 
-//- make lower chain invisible
-
-
-- Add new breathIndicator
-- allow for hold cycles 
-- abstract grabbing item so you can press anywhere on screen (see cloudbreaker)
-- Add lanes for VERY basic gameplay
-	//- reduce balloon colors to 2 
-	//- add 2 sensor entities
-	//- add collision rules to check if right balloon is going through
-	- put 'perfect!' text in place if it is
-	- add reward text entity 
-	- grab sprite sheet from cloudbreaker
-	- reward accordingly 
+//- init horizontal stage
+//- clean up balloon lifter code
+//- re-build dummy breath indicator
+	//- include new in,hold,ex,hold cycle
+	//- use 6brpm values for now
+	//- indicator constantly runs, doesnt require input
+//- clean up breathIndicator so it does not connect to spawning etc
+- Feed in dummy heart rate & coherence values
+	- build array of dummy values
+	- feed in during update
+	- loop array 
+- Dynamic level building
+	- research edge shapes
+	- test building edge shapes
+	- take dummy bpm values and test level building  
+- Player character
+	- movement connected to coherence score
+	- tap to bounce
+	- OR: movement connected to breath, tiny wings style. 
+		- in breath floats player up, out breath drops player down
+		- this should encourage synchrony/RSA! 
+	- put breath indicator over player
+- Test with dummy values 
 
 
+
+/////////////////////
+
+breathController: function(){
+		//set the breathIndicator and initialise times 
+		//in: 3, hold: 1, out: 4, hold: 2
+		//    3        4       8        10
+
+  		//set timer in ig.game scope
+		if( this.breathTimer <= this.breathModel.i ){
+			//INHALE
+		}
+		if( this.breathTimer > this.breathModel.i && this.breathTimer <= this.breathModel.i + this.breathModel.ih ){
+			//INHALE HOLD
+		}
+		if( this.breathTimer > this.breathModel.i + this.breathModel.ih && this.breathTimer <= this.breathModel.i + this.breathModel.ih + this.breathModel.o ){
+			//EXHALE
+		}
+		if( this.breathTimer > this.breathModel.i + this.breathModel.ih + this.breathModel.o && this.breathTimer <= this.breathModel.i + this.breathModel.ih + this.breathModel.o + this.breathModel.oh ){
+			//EXHALE HOLD
+
+			//reset timer
+		}
+
+	}
 
 
 
