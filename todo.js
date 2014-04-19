@@ -30,6 +30,7 @@
 		//- first vertex is finishing vertex of previous edgeShape
 		//- second vertex is new co-ords expressed relative to local co-ords
 			//- so y co-ord = ( ig.game.bpm - this.pos.y )
+	//- put sprite on floor shapes
 
 		- still not great on performance... needs testing. 	
 	//- take dummy bpm values and test level building  
@@ -38,7 +39,8 @@
 	- movement connected to coherence score
 	- tap to bounce
 	- OR: movement connected to breath, tiny wings style. 
-		- in breath floats player up, out breath drops player down
+		- in breath floats player up and starts spinning, 
+		- out breath drops player down, spinning continues for out breath duration
 		- this should encourage synchrony/RSA! 
 	- put breath indicator over player
 - Test with dummy values 
