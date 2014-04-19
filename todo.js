@@ -9,28 +9,31 @@
 	//- include new in,hold,ex,hold cycle
 	//- use 6brpm values for now
 	//- indicator constantly runs, doesnt require input
+	//- place over player
+	- fix text wobble
 //- clean up breathIndicator so it does not connect to spawning etc
 - Feed in dummy heart rate & coherence values
-	- build array of dummy values
-	- feed in during update
-	- loop array 
-- Dynamic level building
+	//- test bpm values by altering bpm var on a timer
+	- test coherence values... somehow
+
+//- Dynamic level building
 	//- research edge shapes
 	//- test building edge shapes
-	- build in ig.game.bpm and ig.game.timeElapsed 
-	- build an edgeShape every x seconds in update
-		- too much performance hit if we do a 1px line every update
-		- either do a longer line more slowly (naive)
-		- or find a way to feed the right world co-ords into edgeShape 
-		  at time of construction
-		- 2 vertices in array
-		- max delay would be perhaps 0.5 seconds 
-		- first vertex is finishing vertex of previous edgeShape
-		- second vertex is new co-ords expressed relative to local co-ords
-			- so y co-ord = ( ig.game.bpm - this.pos.y )
+	//- build in ig.game.bpm and ig.game.timeElapsed 
+	//- build an edgeShape every x seconds in update
+		//- too much performance hit if we do a 1px line every update
+		//- either do a longer line more slowly (naive)
+		//- or find a way to feed the right world co-ords into edgeShape 
+		  //at time of construction
+		//- 2 vertices in array
+		//- max delay would be perhaps 0.5 seconds 
+		//- first vertex is finishing vertex of previous edgeShape
+		//- second vertex is new co-ords expressed relative to local co-ords
+			//- so y co-ord = ( ig.game.bpm - this.pos.y )
 
+		- still not great on performance... needs testing. 	
+	//- take dummy bpm values and test level building  
 
-	- take dummy bpm values and test level building  
 - Player character
 	- movement connected to coherence score
 	- tap to bounce
