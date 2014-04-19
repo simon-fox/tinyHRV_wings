@@ -41,12 +41,12 @@
 
 - Player character
 	- movement connected to coherence score
-	- tap to bounce
+	//- tap to bounce
 	- OR: movement connected to breath, tiny wings style. 
 		- in breath floats player up and starts spinning, 
-		- out breath drops player down, spinning continues for out breath duration
+		//- out breath drops player down, spinning continues for out breath duration
 		- this should encourage synchrony/RSA! 
-	- put breath indicator over player
+	//- put breath indicator over player
 - Test with dummy values 
 
 
@@ -81,8 +81,45 @@ breathController: function(){
 
 
 
+//////////////////
+
+//map: 
+var map = [
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+]
+
+//- generate a tall level the width of the screen 
+- when the camera trap hits the edge of the level
+- create a new column 
+	- loop through all arrays, simply push in one int 
+	- slice out the int at the [0] pos
+- 
 
 
+
+--------------------
+
+
+- every loop 
+	- loop through all edge shapes
+	- translate them on the x axis 
+	- if ( pos.x < 0 )
+		- kill them 
+
+
+		
 
 
 
