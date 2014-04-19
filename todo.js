@@ -36,8 +36,16 @@
 	//- take dummy bpm values and test level building  
 
 	- sort out proper infinite scrolling
-		- destroy past level points
-		- build future level ahead of player
+		//- destroy past level points
+		//- build future level ahead of player
+
+		- work on a proper framework for tweaking these numbers
+			- sample rate
+			- bpm to y axis normalisation
+			- time to x axis normalisation
+			- velocity of moving edgeShapes -x 
+			- velocity of player
+			- amount of tail to kill on bpm data 
 
 - Player character
 	- movement connected to coherence score
@@ -119,7 +127,7 @@ var map = [
 		- kill them 
 
 
-		
+
 
 
 
