@@ -41,11 +41,13 @@
 		//- deal with destroying past points
 		//- entities not killing properly
 		//- Actually it was about controlling future points
-		- when player reaches end of level (or certain point)
-			- around x = 4000
-		- clear timeElapsed
-		- kill all edgeShapes
-		- move player back to starting point
+		//- when player reaches end of level (or certain point)
+			//- around x = 4000
+		//- clear timeElapsed
+		//- kill all edgeShapes
+		//- move player back to starting point
+		- play with level length to get this feeling right. 
+		- What is max size of level for good performance?
 
 		- work on a proper framework for tweaking these numbers
 			- sample rate
@@ -69,6 +71,15 @@
 	- so decrease speed to start with
 	- show coherence just with an onscreen message right now
 	- and good coherence gets you a particle effect
+- coherence should be indicated on screen
+
+- make proper ground graphic - thin slices
+
+- think about game design around this
+	- switches
+	- pickups/collectibles
+	- puzzles
+	- slicing and drawing terrain?
 
 
 
