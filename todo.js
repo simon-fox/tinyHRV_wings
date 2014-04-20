@@ -69,9 +69,10 @@
 
 - coherence should increase speed
 	- so decrease speed to start with
-	- show coherence just with an onscreen message right now
+	//- show coherence just with an onscreen message right now
+	- coherence is 0.1 -> 1.0 
+	- so just add 1 to it and multiply torque by that? worth a try
 	- and good coherence gets you a particle effect
-- coherence should be indicated on screen
 
 - make proper ground graphic - thin slices
 
