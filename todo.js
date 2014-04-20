@@ -38,6 +38,14 @@
 	- sort out proper infinite scrolling
 		//- destroy past level points
 		//- build future level ahead of player
+		//- deal with destroying past points
+		//- entities not killing properly
+		//- Actually it was about controlling future points
+		- when player reaches end of level (or certain point)
+			- around x = 4000
+		- clear timeElapsed
+		- kill all edgeShapes
+		- move player back to starting point
 
 		- work on a proper framework for tweaking these numbers
 			- sample rate
@@ -50,12 +58,17 @@
 - Player character
 	- movement connected to coherence score
 	//- tap to bounce
-	- OR: movement connected to breath, tiny wings style. 
-		- in breath floats player up and starts spinning, 
+	//- OR: movement connected to breath, tiny wings style. 
+		//- in breath floats player up and starts spinning, 
 		//- out breath drops player down, spinning continues for out breath duration
 		- this should encourage synchrony/RSA! 
 	//- put breath indicator over player
 - Test with dummy values 
+
+- coherence should increase speed
+	- so decrease speed to start with
+	- show coherence just with an onscreen message right now
+	- and good coherence gets you a particle effect
 
 
 
