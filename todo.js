@@ -63,8 +63,10 @@
 	//- OR: movement connected to breath, tiny wings style. 
 		//- in breath floats player up and starts spinning, 
 		//- out breath drops player down, spinning continues for out breath duration
-		- this should encourage synchrony/RSA! 
+		//- this should encourage synchrony/RSA! 
 	//- put breath indicator over player
+	//- give the player a score
+	- write the score to screen
 - Test with dummy values 
 
 - coherence should increase speed
@@ -74,7 +76,15 @@
 	- so just add 1 to it and multiply torque by that? worth a try
 	- and good coherence gets you a particle effect
 
-- make proper ground graphic - thin slices
+- turn off coherence multiplier for test
+
+- award points for staying close to the front of the wave
+	- getPosition on the edgeEntities[ .length ]; 
+	- same on player
+	- if edgeEntities.pos.x - player.pos.x <= someValue 
+		- points!!!
+
+//- make proper ground graphic - thin slices
 
 - think about game design around this
 	- switches
