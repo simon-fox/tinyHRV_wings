@@ -50,9 +50,50 @@
 		- What is max size of level for good performance?
 
 		- work on a proper framework for tweaking these numbers
-			- sample rate
+			- polling rate
+				- Separate sampling and polling
+				- sampling is what the Polar does with the pulse wave
+				- it needs to do it 100s of times a second (0.01 or so)
+				- Polling is what we do with the BPM data the polar generates
+				- It only needs to happen somewhere between 2 and 4 times a second
+				- We may have a problem when we poll twice a second because we might 
+				  receive the same heart rate twice in a row when that is essentially inaccurate
+				- SO, the questions is: Does the CC library send us data ONLY on a set rate ( once every 0.5 seconds )
+				- or, does it send us data every time a new BPM/IBI is calculated?
+					- for our purposes BPM and IBI are interchangeable 
+				- When we generate new edge shapes we need to add some logic
+					- has a new IBI/BPM been generated?
+					- if NOT - then make a best guess about what the next point may be
+						- Possible approaches: 
+							- project the existing gradient OR
+							- Email OROWA to ask him about exponential rate of change calculation 
+								- exponential rate of change: 
+								- bpm: 100
+								       		diff: -20
+								       80 			diff: 5
+								       		diff: -15
+								       65			diff: 10 -> this is the rate of change of the rate of change
+								       		diff: -5
+								       60
+								       		diff: -5
+								       55
+								            diff: -5 - this is the rate of change
+								       50
+
+								- so if there is no new piece of data after 50 bpm - the last point
+								- and the previous rate of change is -5
+								- the previous rate of change of rate of change is 0
+								- so you would assume the rate of change remains constant
+								- and the best guess for the next BPM is 45
+								- we assume that the rate of change of rate of change remains constant 
+								  from one point to the next - play with this assumption if inaccurate 
+
+
+					- if so, use the new piece of data
 			- bpm to y axis normalisation
+				- free to tweak as gameplay demands
 			- time to x axis normalisation
+				- free to tweak as gameplay demands 
 			- velocity of moving edgeShapes -x 
 			- velocity of player
 			- amount of tail to kill on bpm data 
@@ -76,13 +117,16 @@
 	- so just add 1 to it and multiply torque by that? worth a try
 	- and good coherence gets you a particle effect
 
-- turn off coherence multiplier for test
+//- turn off coherence multiplier for test
 
-- award points for staying close to the front of the wave
-	- getPosition on the edgeEntities[ .length ]; 
-	- same on player
-	- if edgeEntities.pos.x - player.pos.x <= someValue 
-		- points!!!
+//- award points for staying close to the front of the wave
+	//- getPosition on the edgeEntities[ .length ]; 
+	//- same on player
+	//- if edgeEntities.pos.x - player.pos.x <= someValue 
+	//- points!!!
+	- scoring should generate a particle effect
+	- BI color should augment according to distance from leading edge
+		- map color change directly to distance. 
 
 //- make proper ground graphic - thin slices
 
